@@ -1114,6 +1114,10 @@ footer {
     background: var(--secondary-color);
     box-shadow: 0 4px 15px rgba(249, 0, 184, 0.3);
 }
+.add-to-cart-button.full-width:hover {
+    transform: translateY(-2px);
+}
+
 .full-width {
     width: 100%;
 }
@@ -1356,10 +1360,14 @@ footer {
 
 .buy-tickets-button:hover:not([disabled]) {
     background-color: var(--secondary-color);
+    background-color: #00aaff; /* Lighter shade of primary */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 209, 255, 0.4);
 }
 
 .buy-tickets-button.disabled {
     background-color: #333;
+    background-color: #444;
     cursor: not-allowed;
     pointer-events: none;
 }
@@ -3047,6 +3055,7 @@ footer {
     background-color: var(--card-bg-dark);
     border: 1px solid var(--secondary-color);
     background-color: var(--card-bg-dark); 
+    padding: 8px; 
     border: 1px solid var(--primary-color); /* Changed to primary for better contrast */
     color: var(--text-color-light);
     border-radius: 4px;
