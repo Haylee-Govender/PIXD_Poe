@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music | Mi Casa - Official Website</title>
+    
+  <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+           <i class="fa fa-music"></i>
+            <span class="band-name">MI CASA</span>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="music.html">Music</a></li>
+                <li><a href="merch.html">Merch</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="fan.html">Fan Zone</a></li>
+                <li><a href="press.html">Press</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="hero-section">
+        <div class="hero-content">
+            <h1 class="band-title">MI CASA</h1>
+            <p class="tagline">Experience the Afro-House journey through sound. Where music elevates the soul.</p>
+            
+            <div class="action-buttons">
+                <button class="listen-button">
+                    <span class="play-icon">▶</span> Listen Now
+                </button>
+                <button class="auth-button">
+                    Login / Sign Up
+                </button>
+            </div>
+            <div class="scroll-down-indicator">
+                <div class="scroll-icon"></div>
+            </div>
+        </div>
+    </main>
+    
+    <div class="content-container">
+
+        <section class="welcome-section">
+            <div class="welcome-text">
+                <h2>Welcome to the Mi Casa Universe</h2>
+                <p>Mi Casa is a multi-award winning South African house music band. Since our formation in 2010, we've brought a unique fusion of Afro-Jazz, House, and R&B to stages across the globe. Join J'Something, Dr. Duda, and Mo-T on our cosmic journey!</p>
+            </div>
+            <div class="social-icons">
+                <h3>Follow Our Journey</h3>
+                <a href="#" target="_blank"><i class="fab fa-spotify"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+        </section>
+
+        <section class="news-announcements">
+            <div class="latest-news">
+                <h2>Latest News</h2>
+                <article>
+                    <time datetime="2025-11-15">Nov 15, 2025</time>
+                    <h3>New Single Dropping Soon: "The Vibe"!</h3>
+                    <p>We are thrilled to announce that our new track, "The Vibe," will be available on all streaming platforms next month. Get ready for summer vibes!</p>
+                </article>
+                <article>
+                    <time datetime="2025-10-28">Oct 28, 2025</time>
+                    <h3>European Tour Dates Announced</h3>
+                    <p>Check out our Events page for the full list of cities we'll be visiting in early 2026. Tickets go on sale this Friday!</p>
+                </article>
+                <a href="news.html" class="read-more">View All News</a>
+            </div>
+
+            <div class="announcements">
+                <h2>Important Announcements</h2>
+                <div class="announcement-card">
+                    <h4>🎤 Live Show Postponement</h4>
+                    <p>The Cape Town show scheduled for Dec 10th has been moved to Jan 20th, 2026. All tickets remain valid. Contact us for refunds.</p>
+                </div>
+                <div class="announcement-card">
+                    <h4>🌟 Fan Meetup Success!</h4>
+                    <p>Thank you to everyone who joined our virtual Fan Meetup last week. The recording is now available in the Fan Zone!</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="video-section">
+            <h2>Featured Music Video</h2>
+            <div class="video-wrapper">
+                <iframe 
+                    width="560" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/YOUR_YOUTUBE_EMBED_URL?si=EXAMPLE" 
+                    title="Mi Casa Featured Video" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </section>
+
+        <section class="newsletter-signup">
+            <h2>Join the Mi Casa Mailing List</h2>
+            <p>Be the first to hear about new music, tour dates, and exclusive content!</p>
+            <form action="#" method="POST" class="signup-form">
+                <input type="email" placeholder="Enter your email address" required>
+                <button type="submit" class="listen-button">Subscribe</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Use</a>
+            <a href="contact.html">Support</a>
+        </div>
+        <p>&copy; <span id="currentYear"></span> Mi Casa. All Rights Reserved. Designed by Stellar Sounds Team.</p>
+    </footer>
+
+    <script>
+        // Set the current year for the copyright
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart | Mi Casa - Official Store</title>
+    
+    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="cart-page">
+
+    <header>
+        <div class="logo">
+            <i class="fa fa-music"></i>
+            <span class="band-name">MI CASA</span>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="music.html">Music</a></li>
+                <li><a href="merch.html">Merch</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="fan.html">Fan Zone</a></li>
+                <li><a href="press.html">Press</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html" class="active" title="Shopping Cart"><i class="fas fa-shopping-cart"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="cart-hero-header">
+            <div class="header-content">
+                <h1>Shopping Cart</h1>
+                <p>Review your items before checkout.</p>
+            </div>
+        </section>
+        
+        <div class="content-container">
+            
+            <section class="cart-section">
+                <div class="cart-layout">
+                    
+                    <!-- Cart Items List -->
+                    <div class="cart-items-list">
+                        <!-- Items will be dynamically inserted here -->
+                        <p>Loading your cart...</p>
+                    </div>
+
+                    <!-- Cart Summary -->
+                    <div class="cart-summary">
+                        <h2>Order Summary</h2>
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span id="cart-subtotal">R 0.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Shipping</span>
+                            <span id="cart-shipping">R 0.00</span>
+                        </div>
+                        <hr>
+                        <div class="summary-row total">
+                            <span>Total</span>
+                            <span id="cart-total">R 0.00</span>
+                        </div>
+                        <a href="payment.html" class="checkout-button">
+                            <i class="fas fa-lock"></i> Proceed to Checkout
+                        </a>
+                        <a href="merch.html" class="continue-shopping-link">
+                            <i class="fas fa-arrow-left"></i> Continue Shopping
+                        </a>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="ecommerce-footer">
+                <h2>Store Information</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <i class="fas fa-credit-card"></i>
+                        <h3>Secure Payments</h3>
+                        <p>We accept Visa, Mastercard, and Instant EFT via PayFast.</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-truck"></i>
+                        <h3>Fast Delivery</h3>
+                        <p>Standard shipping: 3-5 days. Express option available.</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-undo-alt"></i>
+                        <h3>Easy Returns</h3>
+                        <p>30-day return policy for unused items. <a href="#">Read Policy</a>.</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-headset"></i>
+                        <h3>Customer Support</h3>
+                        <p>Need help? <a href="contact.html">Contact our team</a>.</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Use</a>
+            <a href="contact.html">Support</a>
+        </div>
+        <p>&copy; <span id="currentYear"></span> Mi Casa. All Rights Reserved. Designed by Stellar Sounds Team.</p>
+    </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+    <script src="js/cart.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events | Mi Casa - Tour Dates & Tickets</title>
+    
+    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Custom Toast Notification Styles */
+        #toast-notification {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #28a745; /* Success green */
+            color: white;
+            padding: 16px 25px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s, bottom 0.3s ease-in-out;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        /* Style for location flags */
+        .location-flag {
+            width: 20px;
+            height: auto;
+            margin-right: 8px;
+            vertical-align: middle; /* Aligns flag with text */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <i class="fa fa-music"></i>
+            <span class="band-name">MI CASA</span>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="music.html">Music</a></li>
+                <li><a href="merch.html">Merch</a></li>
+                <li><a href="events.html" class="active">Events</a></li>
+                <li><a href="fan.html">Fan Zone</a></li>
+                <li><a href="press.html">Press</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="events-hero-header">
+            <div class="header-content">
+                <h1>All Tour Dates</h1>
+                <p>Complete list of upcoming shows and festival appearances.</p>
+                
+                <div class="countdown-container">
+                    <h3>Next Show in:</h3>
+                    <div id="countdown" class="countdown-timer">
+                        <span id="days">00</span>D : 
+                        <span id="hours">00</span>H : 
+                        <span id="minutes">00</span>M : 
+                        <span id="seconds">00</span>S
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div class="content-container">
+            
+            <section class="tour-list-section">
+                <h2>Upcoming Shows</h2>
+                
+                <div class="event-card">
+                    <div class="event-details">
+                        <div class="date-time">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span class="date">Dec 15, 2025</span>
+                            <span class="time">8:00 PM</span>
+                        </div>
+                        <div class="venue-info">
+                            <span class="venue">The Cosmic Arena</span>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <img src="https://flagcdn.com/w20/us.png" alt="USA Flag" class="location-flag">
+                            <span class="location">Los Angeles, CA, USA</span>
+                            <a href="#" class="map-link">View Event Map</a>
+                        </div>
+                    </div>
+                    <div class="event-actions">
+                        <span class="ticket-status on-sale">On Sale</span>
+                        <a href="booking.html?event=la" class="buy-tickets-button">Buy Tickets</a>
+                        <button class="add-to-cal-button" title="Add to Calendar / RSVP"><i class="fas fa-plus-circle"></i> Add to Calendar</button>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-details">
+                        <div class="date-time">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span class="date">Dec 22, 2025</span>
+                            <span class="time">7:30 PM</span>
+                        </div>
+                        <div class="venue-info">
+                            <span class="venue">Galaxy Theater</span>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <img src="https://flagcdn.com/w20/us.png" alt="USA Flag" class="location-flag">
+                            <span class="location">New York, NY, USA</span>
+                            <a href="#" class="map-link">View Event Map</a>
+                        </div>
+                    </div>
+                    <div class="event-actions">
+                        <span class="ticket-status limited">Limited</span>
+                        <a href="booking.html?event=ny" class="buy-tickets-button">Buy Tickets</a>
+                        <button class="add-to-cal-button" title="Add to Calendar / RSVP"><i class="fas fa-plus-circle"></i> Add to Calendar</button>
+                    </div>
+                </div>
+
+                <div class="event-card sold-out">
+                    <div class="event-details">
+                        <div class="date-time">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span class="date">Jan 5, 2026</span>
+                            <span class="time">9:00 PM</span>
+                        </div>
+                        <div class="venue-info">
+                            <span class="venue">Nebula Hall</span>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <img src="https://flagcdn.com/w20/us.png" alt="USA Flag" class="location-flag">
+                            <span class="location">Chicago, IL, USA</span>
+                            <a href="#" class="map-link">View Venue Info</a>
+                        </div>
+                    </div>
+                    <div class="event-actions">
+                        <span class="ticket-status sold-out-tag">Sold Out</span>
+                        <a href="#" class="buy-tickets-button disabled">Sold Out</a>
+                        <button class="add-to-cal-button" title="Add to Calendar / RSVP"><i class="fas fa-plus-circle"></i> Add to Calendar</button>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-details">
+                        <div class="date-time">
+                            <i class="fas fa-calendar-alt"></i>
+                            <span class="date">Jan 12, 2026</span>
+                            <span class="time">8:00 PM</span>
+                        </div>
+                        <div class="venue-info">
+                            <span class="venue">Stellar Dome</span>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <img src="https://flagcdn.com/w20/za.png" alt="South Africa Flag" class="location-flag">
+                            <span class="location">Cape Town, South Africa</span>
+                            <a href="#" class="map-link">Link to Bookings</a>
+                        </div>
+                    </div>
+                    <div class="event-actions">
+                        <span class="ticket-status on-sale">On Sale</span>
+                        <a href="booking.html?event=ct" class="buy-tickets-button">Buy Tickets</a>
+                        <button class="add-to-cal-button" title="Add to Calendar / RSVP"><i class="fas fa-plus-circle"></i> Add to Calendar</button>
+                    </div>
+                </div>
+
+                <div class="tour-poster-ad">
+                    <h2>Mi Casa World Tour 2025/2026</h2>
+                    <p>Click here to download the official digital poster and share!</p>
+                    <button class="buy-tickets-button"><i class="fas fa-download"></i> Download Poster</button>
+                </div>
+            </section>
+            
+            <section class="ecommerce-info-grid">
+                <div class="info-card">
+                    <i class="fas fa-credit-card"></i>
+                    <h3>Payment & Security</h3>
+                    <p>All ticket purchases are secured via our official ticketing partner.</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Order Confirmation</h3>
+                    <p>Tickets and confirmation emails are sent immediately after purchase.</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-headset"></i>
+                    <h3>Customer Support</h3>
+                    <p>Need help with your booking? <a href="contact.html">Contact our team</a>.</p>
+                </div>
+            </section>
+
+            <section class="newsletter-signup never-miss-show">
+                <h2>Never Miss a Show</h2>
+                <p>Subscribe to get notified about new tour dates and exclusive pre-sale access!</p>
+                <form action="#" method="POST" class="signup-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="listen-button">Subscribe</button>
+                </form>
+            </section>
+            
+            <!-- Toast Notification Element -->
+            <div id="toast-notification">
+                <i class="fas fa-check-circle"></i>
+                <span>Added to calendar!</span>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Use</a>
+            <a href="contact.html">Support</a>
+        </div>
+        <p>&copy; <span id="currentYear"></span> Mi Casa. All Rights Reserved. Designed by Stellar Sounds Team.</p>
+    </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Set the date we're counting down to (Next show: Dec 15, 2025)
+        const countDownDate = new Date("Dec 15, 2025 20:00:00").getTime();
+
+        const x = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Output the result in elements
+            document.getElementById("days").innerHTML = days.toString().padStart(2, '0');
+            document.getElementById("hours").innerHTML = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").innerHTML = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").innerHTML = seconds.toString().padStart(2, '0');
+
+            // If the countdown is finished, write some text 
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "LIVE NOW!";
+            }
+        }, 1000);
+
+        // Add to Calendar pop-up functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const calendarButtons = document.querySelectorAll('.add-to-cal-button');
+            calendarButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const toast = document.getElementById('toast-notification');
+                    
+                    // In a real application, this would generate an .ics file or link to a calendar service.
+                    // For now, we show a confirmation message.
+                    toast.style.visibility = 'visible';
+                    toast.style.opacity = '1';
+                    toast.style.bottom = '50px';
+
+                    setTimeout(() => {
+                        toast.style.opacity = '0';
+                    }, 2500); // Hide after 2.5 seconds
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

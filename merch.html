@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merch | Mi Casa - Official Store</title>
+    
+    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* This prevents grid items from stretching when other items are hidden by the filter */
+        /* We are overriding the grid-template-columns from the main stylesheet here for more control. */
+        .products-grid {
+            grid-template-columns: repeat(auto-fill, minmax(280px, 280px));
+            justify-content: center; /* Center the grid items when there's extra space */
+        }
+
+        /* Custom Toast Notification Styles */
+        #toast-notification {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #28a745; /* Success green */
+            color: white;
+            padding: 16px 25px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s, bottom 0.3s ease-in-out;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        /* Styles for the new size selector */
+        .size-selector {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .size-selector label {
+            font-weight: 700;
+            color: #ccc;
+        }
+        .size-selector select {
+            padding: 5px 10px;
+            background-color: var(--card-bg-dark);
+            border: 1px solid var(--primary-color);
+            color: var(--text-color-light);
+            border-radius: 4px;
+            font-size: 1em;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <i class="fa fa-music"></i>
+            <span class="band-name">MI CASA</span>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="music.html">Music</a></li>
+                <li><a href="merch.html" class="active">Merch</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="fan.html">Fan Zone</a></li>
+                <li><a href="press.html">Press</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html" title="Shopping Cart"><i class="fas fa-shopping-cart"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="merch-hero-header">
+            <div class="header-content">
+                <h1>Official Merchandise</h1>
+                <p>Rep your favorite Afro-House band with exclusive gear and music.</p>
+                
+                <div class="category-filter">
+                    <button class="filter-button active">All</button>
+                    <button class="filter-button">Apparel</button>
+                    <button class="filter-button">Music</button>
+                    <button class="filter-button">Accessories</button>
+                </div>
+            </div>
+        </section>
+        
+        <div class="content-container">
+            
+            <section class="product-gallery">
+                
+                <div class="products-grid">
+                    <!-- Add data attributes for JS -->
+                    <div class="product-card" 
+                         data-product-id="m-001" 
+                         data-product-name="Mi Casa 'We Made It' Tour T-Shirt" 
+                         data-product-price="350.00" 
+                         data-product-image="images/t_shirt.jpg">
+                        <div class="product-image" style="background-image: url('images/t_shirt.jpg');">
+                            <span class="product-tag new">New</span>
+                        </div>
+                        <div class="product-details">
+                            <span class="product-category">Apparel</span>
+                            <h3>Mi Casa "We Made It" Tour T-Shirt</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 4.8
+                            </div>
+                            <div class="size-selector">
+                                <label for="size-m-001">Size:</label>
+                                <select id="size-m-001" name="size">
+                                    <option value="S">S</option>
+                                    <option value="M" selected>M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                            </div>
+                            <div class="price">R 350.00</div>
+                            <button class="add-to-cart-button full-width">
+                                <i class="fas fa-shopping-cart"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card"
+                         data-product-id="m-002"
+                         data-product-name="Mi Casa Signature Hoodie"
+                         data-product-price="650.00"
+                         data-product-image="images/hoodie.jpg">
+                          <div class="product-image" style="background-image: url('images/hoodie.jpg');">
+                            <span class="product-tag popular">Popular</span>
+                        </div>
+                        <div class="product-details">
+                            <span class="product-category">Apparel</span>
+                            <h3>Mi Casa Signature Hoodie</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 4.9
+                            </div>
+                            <div class="size-selector">
+                                <label for="size-m-002">Size:</label>
+                                <select id="size-m-002" name="size">
+                                    <option value="S">S</option>
+                                    <option value="M" selected>M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                            </div>
+                            <div class="price">R 650.00</div>
+                            <button class="add-to-cart-button full-width">
+                                <i class="fas fa-shopping-cart"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card"
+                         data-product-id="m-003"
+                         data-product-name="Familia Vinyl LP"
+                         data-product-price="450.00"
+                         data-product-image="images/famMerch.jpg">
+                             <div class="product-image" style="background-image: url('images/famMerch.jpg');">
+                            <span class="product-tag limited">Limited</span>
+                        </div>
+                        <div class="product-details">
+                            <span class="product-category">Music</span>
+                            <h3>Familia Vinyl LP</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 5.0
+                            </div>
+                            <div class="price">R 450.00</div>
+                            <button class="add-to-cart-button full-width">
+                                <i class="fas fa-shopping-cart"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card"
+                         data-product-id="m-004"
+                         data-product-name="Signed Band Poster (A3)"
+                         data-product-price="150.00"
+                         data-product-image="images/poster.jpg">
+                        <div class="product-image" style="background-image: url('images/poster.jpg');">
+                        </div>
+                        <div class="product-details">
+                            <span class="product-category">Accessories</span>
+                            <h3>Signed Band Poster (A3)</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 4.5
+                            </div>
+                            <div class="price">R 150.00</div>
+                            <button class="add-to-cart-button full-width">
+                                <i class="fas fa-shopping-cart"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card"
+                         data-product-id="m-005"
+                         data-product-name="Mi Casa Signature Beanie"
+                         data-product-price="250.00"
+                         data-product-image="images/beanie.jpg">
+                        <div class="product-image" style="background-image: url('images/beanie.jpg');">
+                        </div>
+                        <div class="product-details">
+                            <span class="product-category">Accessories</span>
+                            <h3>Mi Casa Signature Beanie</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 4.7
+                            </div>
+                            <div class="price">R 250.00</div>
+                            <button class="add-to-cart-button full-width">
+                                <i class="fas fa-shopping-cart"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-card"
+                         data-product-id="m-006"
+                         data-product-name="Mi Casa 'Su Casa' Tote Bag"
+                         data-product-price="200.00"
+                         data-product-image="images/bag.jpg">
+                        <div class="product-image" style="background-image: url('images/bag.jpg');">
+                        </div>
+                        <div class="product-details">
+                            <span class="product-category">Accessories</span>
+                            <h3>Mi Casa "Su Casa" Tote Bag</h3>
+                            <div class="rating">
+                                <i class="fas fa-star"></i> 4.6
+                            </div>
+                            <div class="price">R 200.00</div>
+                            <button class="add-to-cart-button full-width">
+                                <i class="fas fa-shopping-cart"></i> Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="ecommerce-footer">
+                <h2>Store Information</h2>
+                <div class="info-grid">
+                    <div class="info-card">
+                        <i class="fas fa-credit-card"></i>
+                        <h3>Payment Options</h3>
+                        <p>We accept Visa, Mastercard, and Instant EFT via PayFast.</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Order Confirmation</h3>
+                        <p>Receive tracking info and a confirmation email within 24 hours.</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-truck"></i>
+                        <h3>Delivery Info</h3>
+                        <p>Standard shipping: 3-5 days. Express option available at checkout.</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-undo-alt"></i>
+                        <h3>Returns & Exchanges</h3>
+                        <p>Easy 30-day returns for unused items. <a href="#">Read Policy</a>.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Toast Notification Element -->
+            <div id="toast-notification">
+                <i class="fas fa-check-circle"></i>
+                <span>Item added to cart!</span>
+            </div>
+            
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Use</a>
+            <a href="contact.html">Support</a>
+        </div>
+        <p>&copy; <span id="currentYear"></span> Mi Casa. All Rights Reserved. Designed by Stellar Sounds Team.</p>
+    </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+    <script src="js/cart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterButtons = document.querySelectorAll('.category-filter .filter-button');
+            const productCards = document.querySelectorAll('.product-card');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Get the category from the button's text content
+                    const filter = button.textContent.trim();
+
+                    // Update active state on buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    // Filter the product cards
+                    productCards.forEach(card => {
+                        const category = card.querySelector('.product-category').textContent.trim();
+
+                        if (filter === 'All' || category === filter) {
+                            // Show the card if it matches or if 'All' is selected
+                            card.style.display = 'block';
+                        } else {
+                            // Hide the card if it doesn't match
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Add to Cart Toast Notification
+            const addToCartButtons = document.querySelectorAll('.add-to-cart-button');
+            const toast = document.getElementById('toast-notification');
+
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Show the toast notification
+                    toast.style.visibility = 'visible';
+                    toast.style.opacity = '1';
+                    toast.style.bottom = '50px';
+
+                    // Hide the toast after a few seconds
+                    setTimeout(() => {
+                        toast.style.opacity = '0';
+                    }, 2500);
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

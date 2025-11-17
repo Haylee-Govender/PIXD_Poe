@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Gallery | Stellar Sounds</title>
+    
+    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <i class="fa fa-music"></i>
+            <span class="band-name">MI CASA</span>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li> <li><a href="music.html">Music</a></li>
+                <li><a href="merch.html">Merch</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="fan.html">Fan Zone</a></li>
+                <li><a href="press.html">Press</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="media-gallery-hero-header">
+            <div class="header-content">
+                <h1>Media Gallery</h1>
+                <p>Explore official band photography, tour videos, and album artwork.</p>
+            </div>
+        </section>
+        
+        <div class="content-container">
+            
+            <section class="gallery-filters">
+                <button class="filter-button active">All</button>
+                <button class="filter-button">Photography</button>
+                <button class="filter-button">Tour Videos</button>
+                <button class="filter-button">Artwork</button>
+            </section>
+            
+            <section class="media-grid">
+                
+                <div class="media-item photo-type">
+                    <div class="media-thumbnail large-thumbnail">
+                        <i class="fas fa-image"></i>
+                    </div>
+                    <div class="media-details">
+                        <span class="media-tag photo-tag">Photography</span>
+                        <h3>Official Press Shot 2024</h3>
+                        <p>High resolution image for media use.</p>
+                        <a href="#" class="download-link"><i class="fas fa-download"></i> Download</a>
+                    </div>
+                </div>
+
+                <div class="media-item video-type">
+                    <div class="media-thumbnail large-thumbnail">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="media-details">
+                        <span class="media-tag video-tag">Video</span>
+                        <h3>Behind the Scenes - Cosmic Odyssey Recording</h3>
+                        <p>Watch the making of our latest album.</p>
+                        <a href="#" class="view-link"><i class="fas fa-play-circle"></i> Watch Now</a>
+                    </div>
+                </div>
+
+                <div class="media-item artwork-type">
+                    <div class="media-thumbnail large-thumbnail">
+                        <i class="fas fa-compact-disc"></i>
+                    </div>
+                    <div class="media-details">
+                        <span class="media-tag artwork-tag">Artwork</span>
+                        <h3>Cosmic Odyssey - Album Art</h3>
+                        <p>Official high-res cover art.</p>
+                        <a href="#" class="download-link"><i class="fas fa-download"></i> Download</a>
+                    </div>
+                </div>
+
+                <div class="media-item photo-type">
+                    <div class="media-thumbnail large-thumbnail">
+                        <i class="fas fa-image"></i>
+                    </div>
+                    <div class="media-details">
+                        <span class="media-tag photo-tag">Photography</span>
+                        <h3>Live Performance - NYC</h3>
+                        <p>Action shot from the 2024 tour.</p>
+                        <a href="#" class="download-link"><i class="fas fa-download"></i> Download</a>
+                    </div>
+                </div>
+                
+                <div class="media-item video-type">
+                    <div class="media-thumbnail large-thumbnail">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="media-details">
+                        <span class="media-tag video-tag">Video</span>
+                        <h3>Acoustic Session - Nebula Dreams</h3>
+                        <p>Intimate performance just for fans.</p>
+                        <a href="#" class="view-link"><i class="fas fa-play-circle"></i> Watch Now</a>
+                    </div>
+                </div>
+
+                <div class="media-item artwork-type">
+                    <div class="media-thumbnail large-thumbnail">
+                        <i class="fas fa-signature"></i>
+                    </div>
+                    <div class="media-details">
+                        <span class="media-tag artwork-tag">Artwork</span>
+                        <h3>Official Logo Pack</h3>
+                        <p>High-res vector logos for press use.</p>
+                        <a href="#" class="download-link"><i class="fas fa-download"></i> Download</a>
+                    </div>
+                </div>
+
+            </section>
+            
+            <section class="load-more-section">
+                <button class="action-button-alt">Load More Media</button>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Use</a>
+            <a href="contact.html">Support</a>
+        </div>
+        <p>&copy; <span id="currentYear"></span> Stellar Sounds. All Rights Reserved. Designed by Stellar Sounds Team.</p>
+    </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>

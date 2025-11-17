@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music | Mi Casa - Official Discography</title>
+    
+    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Custom Toast Notification Styles */
+        #toast-notification {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #28a745; /* Success green */
+            color: white;
+            padding: 16px 25px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s, bottom 0.3s ease-in-out;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <i class="fa fa-music"></i>
+            <span class="band-name">MI CASA</span>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="music.html" class="active">Music</a></li>
+                <li><a href="merch.html">Merch</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="fan.html">Fan Zone</a></li>
+                <li><a href="press.html">Press</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html" title="Shopping Cart"><i class="fas fa-shopping-cart"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="music-hero-header">
+            <div class="header-content">
+                <h1>Our Music</h1>
+                <p>Explore our discography and experience the sound of Afro-House.</p>
+            </div>
+        </section>
+        
+        <div class="content-container">
+            
+            <section class="album-section">
+                <h2>Albums</h2>
+                <p class="subtitle">Our complete discography available to stream and download.</p>
+
+                <div class="albums-grid">
+                    
+                    <div class="album-card">
+                        <div class="album-cover">
+                            <img src="images/wemade.png" alt="Album cover for We Made It">
+                            <div class="stream-links">
+                                <a href="#" target="_blank"><i class="fab fa-apple"></i></a>
+                                <a href="#" target="_blank"><i class="fab fa-spotify"></i></a>
+                            </div>
+                        </div>
+                        <h3>WE MADE IT</h3>
+                        <p class="release-date">Released: September 2020</p>
+                        <a href="#we-made-it-tracklist" class="tracklist-link">View Tracklist</a>
+                    </div>
+                    
+                    <div class="album-card">
+                        <div class="album-cover">
+                            <img src="images/fam.png" alt="Album cover for Familia">
+                            <div class="stream-links">
+                                <a href="#" target="_blank"><i class="fab fa-apple"></i></a>
+                                <a href="#" target="_blank"><i class="fab fa-spotify"></i></a>
+                            </div>
+                        </div>
+                        <h3>FAMILIA</h3>
+                        <p class="release-date">Released: August 2017</p>
+                        <a href="#familia-tracklist" class="tracklist-link">View Tracklist</a>
+                    </div>
+                    
+                    <div class="album-card">
+                        <div class="album-cover">
+                            <img src="images/homesweet.png" alt="Album cover for Home Sweet Home">
+                            <div class="stream-links">
+                                <a href="#" target="_blank"><i class="fab fa-apple"></i></a>
+                                <a href="#" target="_blank"><i class="fab fa-spotify"></i></a>
+                            </div>
+                        </div>
+                        <h3>HOME SWEET HOME</h3>
+                        <p class="release-date">Released: June 2015</p>
+                        <a href="#home-sweet-home-tracklist" class="tracklist-link">View Tracklist</a>
+                    </div>
+                    
+                    <div class="album-card">
+                        <div class="album-cover">
+                            <img src="images/sukasi.webp" alt="Album cover for Mi Casa Su Kasi">
+                            <div class="stream-links">
+                                <a href="#" target="_blank"><i class="fab fa-apple"></i></a>
+                                <a href="#" target="_blank"><i class="fab fa-spotify"></i></a>
+                            </div>
+                        </div>
+                        <h3>MI CASA SU KASI</h3>
+                        <p class="release-date">Released: September 2014</p>
+                        <a href="#micasa-su-kasi-tracklist" class="tracklist-link">View Tracklist</a>
+                    </div>
+
+                    <div class="album-card">
+                        <div class="album-cover">
+                            <img src="images/sucasa.webp" alt="Album cover for Mi Casa Music">
+                            <div class="stream-links">
+                                <a href="#" target="_blank"><i class="fab fa-apple"></i></a>
+                                <a href="#" target="_blank"><i class="fab fa-spotify"></i></a>
+                            </div>
+                        </div>
+                        <h3>MI CASA SU CASA</h3>
+                        <p class="release-date">Released: 2013</p>
+                        <a href="#micasa-music-tracklist" class="tracklist-link">View Tracklist</a>
+                    </div>
+
+                     <div class="album-card">
+                        <div class="album-cover">
+                            <img src="images/lastalbum.webp" alt="Album cover for Mi Casa Music">
+                            <div class="stream-links">
+                                <a href="#" target="_blank"><i class="fab fa-apple"></i></a>
+                                <a href="#" target="_blank"><i class="fab fa-spotify"></i></a>
+                            </div>
+                        </div>
+                        <h3>MI CASA MUSIC</h3>
+                        <p class="release-date">Released: 2011</p>
+                        <a href="#micasa-music-tracklist" class="tracklist-link">View Tracklist</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="popular-tracks-section">
+                <h2>Popular Tracks</h2>
+                <p class="subtitle">Fan favorites and singles from across our albums.</p>
+                
+                <ul class="track-list">
+                    <li data-track-id="track1">
+                        <button class="play-button"><i class="fas fa-play"></i></button>
+                        <span class="track-name">These Streets</span>
+                        <span class="track-album">Mi Casa Music (2011)</span>
+                        <span class="track-time">4:15</span>
+                    </li>
+                    <li data-track-id="track2">
+                        <button class="play-button"><i class="fas fa-play"></i></button>
+                        <span class="track-name">Jika</span>
+                        <span class="track-album">Mi Casa Su Kasi (2014)</span>
+                        <span class="track-time">3:58</span>
+                    </li>
+                    <li data-track-id="track3">
+                        <button class="play-button"><i class="fas fa-play"></i></button>
+                        <span class="track-name">La Vida</span>
+                        <span class="track-album">Familia (2017)</span>
+                        <span class="track-time">5:12</span>
+                    </li>
+                    <li data-track-id="track4">
+                        <button class="play-button"><i class="fas fa-play"></i></button>
+                        <span class="track-name">I'm a Lover</span>
+                        <span class="track-album">We Made It (2020)</span>
+                        <span class="track-time">4:05</span>
+                    </li>
+                </ul>
+                
+              
+            </section>
+            
+            <section class="buy-download-section">
+                <h2>Download & Purchase</h2>
+                <p class="subtitle">Get high-quality downloads or order physical albums.</p>
+
+                <div class="purchase-container">
+                    <div class="purchase-item"
+                         data-product-id="d-001"
+                         data-product-name="'WE MADE IT' Digital Download"
+                         data-product-price="120.00"
+                         data-product-image="images/wemade.png">
+                        <img src="images/wemade.png" alt="'WE MADE IT' Digital Download" class="purchase-item-image">
+                        <h4>"WE MADE IT" Digital Download</h4>
+                        <p>High-Quality MP3/FLAC - R120.00</p>
+                        <button class="add-to-cart-button">Add to Cart</button>
+                    </div>
+                    
+                    <div class="purchase-item"
+                         data-product-id="v-001"
+                         data-product-name="'FAMILIA' Vinyl LP"
+                         data-product-price="450.00"
+                         data-product-image="images/fam.png">
+                        <img src="images/fam.png" alt="'FAMILIA' Vinyl LP" class="purchase-item-image">
+                        <h4>"FAMILIA" Vinyl LP</h4>
+                        <p>Limited Edition Gatefold Vinyl - R450.00</p>
+                        <button class="add-to-cart-button">Add to Cart</button>
+                    </div>
+
+                    <div class="purchase-item"
+                         data-product-id="d-002"
+                         data-product-name="'HOME SWEET HOME' Digital Download"
+                         data-product-price="120.00"
+                         data-product-image="images/homesweet.png">
+                        <img src="images/homesweet.png" alt="'HOME SWEET HOME' Digital Download" class="purchase-item-image">
+                        <h4>"HOME SWEET HOME" Digital Download</h4>
+                        <p>High-Quality MP3/FLAC - R120.00</p>
+                        <button class="add-to-cart-button">Add to Cart</button>
+                    </div>
+
+                    <div class="purchase-item"
+                         data-product-id="cd-001"
+                         data-product-name="'MI CASA SU KASI' Physical CD"
+                         data-product-price="180.00"
+                         data-product-image="images/sukasi.webp">
+                        <img src="images/sukasi.webp" alt="'MI CASA SU KASI' Physical CD" class="purchase-item-image">
+                        <h4>"MI CASA SU KASI" Physical CD</h4>
+                        <p>Standard Jewel Case CD - R180.00</p>
+                        <button class="add-to-cart-button">Add to Cart</button>
+                    </div>
+                </div>
+
+                <div class="ecommerce-info-grid">
+                    <div class="info-card">
+                        <i class="fas fa-credit-card"></i>
+                        <h3>Payment Options</h3>
+                        <p>Accepting all major credit cards, PayPal, and EFT.</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-check-circle"></i>
+                        <h3>Order Confirmation</h3>
+                        <p>You will receive an email confirmation instantly after checkout.</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-box-open"></i>
+                        <h3>Delivery & Returns</h3>
+                        <p>Ships within 2-3 days. <a href="#">View our returns policy.</a></p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Toast Notification Element -->
+            <div id="toast-notification">
+                <i class="fas fa-check-circle"></i>
+                <span>Item added to cart!</span>
+            </div>
+
+            <section class="bts-section">
+                <h2>Behind the Sound</h2>
+                <p class="subtitle">Stories from the studio and the creation process.</p>
+                <div class="video-wrapper">
+                    <iframe 
+                        width="560" 
+                        height="315" 
+                        src="https://www.youtube.com/embed/YOUR_MI_CASA_STUDIO_VLOG?si=EXAMPLE" 
+                        title="Mi Casa Studio Session" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Use</a>
+            <a href="contact.html">Support</a>
+        </div>
+        <p>&copy; <span id="currentYear"></span> Mi Casa. All Rights Reserved. Designed by Stellar Sounds Team.</p>
+    </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+    <script src="js/cart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add to Cart Toast Notification
+            const addToCartButtons = document.querySelectorAll('.add-to-cart-button');
+            const toast = document.getElementById('toast-notification');
+
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Show the toast notification
+                    toast.style.visibility = 'visible';
+                    toast.style.opacity = '1';
+                    toast.style.bottom = '50px';
+
+                    // Hide the toast after a few seconds
+                    setTimeout(() => {
+                        toast.style.opacity = '0';
+                    }, 2500);
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>

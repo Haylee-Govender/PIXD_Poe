@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout | Mi Casa - Official Store</title>
+    
+    <link rel="stylesheet" href="css/style.css"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Add intl-tel-input CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/css/intlTelInput.css">
+    <style>
+        /* Styles for validation error messages */
+        .error-message {
+            color: #ff4d4d;
+            font-size: 0.85rem;
+            margin-top: 5px;
+            display: none; /* Hidden by default */
+        }
+        /* --- Toast Notification Styles --- */
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #28a745; /* Success green */
+            color: #fff;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 2000;
+            opacity: 0;
+            transform: translateY(-30px);
+            visibility: hidden;
+            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+        }
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+            visibility: visible;
+        }
+        /* --- Styles for intl-tel-input to match the theme --- */
+        .iti {
+            width: 100%; /* Make the input full-width */
+        }
+        .iti__country-list {
+            background-color: var(--card-bg-dark, #1a1a1a);
+            border: 1px solid var(--primary-color, #00D1FF);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+        }
+        .iti__country:hover, .iti__country.iti__highlight {
+            background-color: #2a2a2a;
+        }
+        .iti__divider {
+            border-bottom-color: #444;
+        }
+    </style>
+</head>
+<body class="payment-page">
+
+    <header>
+        <div class="logo">
+            <i class="fa fa-music"></i>
+            <span class="band-name">MI CASA</span>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="music.html">Music</a></li>
+                <li><a href="merch.html">Merch</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="fan.html">Fan Zone</a></li>
+                <li><a href="press.html">Press</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="cart.html" class="active" title="Shopping Cart"><i class="fas fa-shopping-cart"></i></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="payment-hero-header">
+            <div class="header-content">
+                <h1>Secure Checkout</h1>
+                <p>Complete your purchase below.</p>
+            </div>
+        </section>
+        
+        <div class="content-container">
+            
+            <section class="checkout-section">
+                <div class="checkout-layout">
+                    
+                    <!-- Checkout Form -->
+                    <div class="checkout-form-container">
+                        <form id="payment-form">
+                            <fieldset>
+                                <legend>Shipping Information</legend>
+                                <div class="form-group">
+                                    <label for="full-name">Full Name</label>
+                                    <input type="text" id="full-name" name="full-name" required placeholder="John Doe">
+                                    <div class="error-message" id="full-name-error"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone-number">Phone Number</label>
+                                    <input type="tel" id="phone-number" name="phone-number" required>
+                                    <div class="error-message" id="phone-number-error"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="address">Street Address</label>
+                                    <input type="text" id="address" name="address" required placeholder="123 Galaxy Lane">
+                                    <div class="error-message" id="address-error"></div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="city">City</label>
+                                        <input type="text" id="city" name="city" required placeholder="Johannesburg">
+                                        <div class="error-message" id="city-error"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="postal-code">Postal Code</label>
+                                        <input type="text" id="postal-code" name="postal-code" required placeholder="2000">
+                                        <div class="error-message" id="postal-code-error"></div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="country">Country</label>
+                                    <input type="text" id="country" name="country" value="South Africa" required>
+                                    <div class="error-message" id="country-error"></div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <legend>Payment Details</legend>
+                                <div class="form-group">
+                                    <label for="card-number">Card Number</label>
+                                    <div class="card-input-wrapper">
+                                        <i class="fas fa-credit-card"></i>
+                                        <input type="text" id="card-number" name="card-number" required placeholder="0000 0000 0000 0000" inputmode="numeric">
+                                    </div>
+                                    <div class="error-message" id="card-number-error"></div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="expiry-date">Expiry Date</label>
+                                        <input type="text" id="expiry-date" name="expiry-date" required placeholder="MM / YY">
+                                        <div class="error-message" id="expiry-date-error"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cvc">CVC</label>
+                                        <input type="text" id="cvc" name="cvc" required placeholder="123" inputmode="numeric">
+                                        <div class="error-message" id="cvc-error"></div>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <button type="submit" class="pay-now-button">
+                                <i class="fas fa-shield-alt"></i> Pay Now
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Order Summary -->
+                    <div class="order-summary-checkout">
+                        <h2>Order Summary</h2>
+                        <div id="summary-items-list">
+                            <!-- Summary items will be dynamically inserted here -->
+                            <p>Loading summary...</p>
+                        </div>
+                        <hr>
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span id="summary-subtotal">R 0.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Shipping</span>
+                            <span id="summary-shipping">R 0.00</span>
+                        </div>
+                        <hr>
+                        <div class="summary-row total">
+                            <span>Total</span>
+                            <span id="summary-total">R 0.00</span>
+                        </div>
+                        <div class="secure-payment-info">
+                            <i class="fas fa-lock"></i>
+                            <p>All transactions are secure and encrypted.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Toast Notification -->
+    <div id="toast-notification" class="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toast-message"></span>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a>
+            <a href="terms.html">Terms of Use</a>
+            <a href="contact.html">Support</a>
+        </div>
+        <p>&copy; <span id="currentYear"></span> Mi Casa. All Rights Reserved. Designed by Stellar Sounds Team.</p>
+    </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+    <!-- Libraries for international phone number input and validation -->
+    <script src="https://unpkg.com/libphonenumber-js@1.10.14/bundle/libphonenumber-min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.1/build/js/intlTelInput.min.js"></script>
+
+    <script src="js/cart.js"></script>
+    <script src="js/payment.js"></script>
+
+    <script>
+        // This script should be in a separate file in a real app, but for simplicity:
+        document.addEventListener('DOMContentLoaded', () => {
+            if (document.querySelector('body.payment-page')) {
+                renderOrderSummary();
+            }
+        });
+    </script>
+
+</body>
+</html>
